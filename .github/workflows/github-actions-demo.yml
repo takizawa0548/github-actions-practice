@@ -17,4 +17,4 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Use local hello-world-action
-        uses: .github/actions/hello-world-action
+        uses: ./.github/actions/hello-world-action
