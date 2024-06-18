@@ -16,8 +16,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4.3.3
-        with:
-              name: github-actions-demo.yml
-              path: .github/workflows/*
+      - name: Use local hello-world-action
+        uses: ./.github/actions/hello-world-action
