@@ -16,7 +16,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Use local hello-world-action
         uses: ./.github/actions/hello-world-action
-        with:
-          artifact-name: github-actions-demo.yml
-          artifact-path: .github/workflows/*
+
