@@ -1,5 +1,4 @@
 name: 'Hello World Action'
-description: 'An action that uploads build artifacts'
 runs:
   using: 'composite'
   steps:
