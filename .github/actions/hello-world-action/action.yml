@@ -1,10 +1,17 @@
 name: 'Hello World Action'
 description: 'An action that uploads build artifacts'
+inputs:
+  artifact-name:
+    description: 'The name of the artifact to upload'
+    required: true
+  artifact-path:
+    description: 'The path of the artifact to upload'
+    required: true
 runs:
   using: 'composite'
   steps:
     - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4.3.3
-        with:
-              name: github-actions-demo.yml
-              path: .github/workflows/*
+      uses: actions/upload-artifact@v4.3.3
+      with:
+        name: ${{ inputs.artifact-name }}
+        path: ${{ inputs.artifact-path }}
