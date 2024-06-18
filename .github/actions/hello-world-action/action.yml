@@ -1,5 +1,5 @@
-runs:
-  using: 'composite'
+jobs:
+  my_first_job:
   steps:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.3
