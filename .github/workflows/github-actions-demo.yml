@@ -18,4 +18,6 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.3
-  
+        with:
+              name: my-artifact # アーティファクトの名前
+              path: path/to/artifacts/* # アップロードするファイルやディレクトリのパス
