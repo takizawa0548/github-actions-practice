@@ -5,7 +5,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - if: ${{ github.ref == 'refs/heads/main' }}
+      - if: ${{ github.ref == 'main' }}
         run: echo "メインブランチ"
       - if: ${{ cancelled() }}
         run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
