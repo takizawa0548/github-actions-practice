@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - if: ${{ success() }} 
-        run: echo ${{join(github.event.issue.labels.*.name, ', ')}}
+        run: echo "成功"
       - if: ${{ cancelled() }}
         run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - if: ${{ failure() }}
