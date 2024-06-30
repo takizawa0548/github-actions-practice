@@ -1,23 +1,12 @@
-name: Build and deploy
-on: push
+on: workflow_dispatch
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    outputs:
-      build_id: ${{ steps.build_step.outputs.build_id }}
+  if-Windows-else:
+    runs-on: macos-latest
     steps:
-      - name: Build
-        id: build_step
-        run: echo "build_id=$RANDOM" >> $GITHUB_OUTPUT
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Deploying build ${{ needs.build.outputs.build_id }}"
-  debug:
-    needs: [build, deploy]
-    runs-on: ubuntu-latest
-    if: ${{ failure() }}
-    steps:
-      - run: echo "Failed to build and deploy"
+      - name: condition 1
+        if: runner.os == 'Windows'
+        run: echo "The operating system on the runner is $env:RUNNER_OS."
+      - name: condition 2
+        if: runner.os != 'Windows'
+        run: echo "The operating system on the runner is not Windows, it's $RUNNER_OS."
